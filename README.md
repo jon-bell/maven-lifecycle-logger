@@ -4,7 +4,7 @@ Configuration:
 To record only tests, do ` -DlogTestsOnly=true`. To specify output file, do `-DlogFile=some/log/file` otherwise default will be `maven.build.log`. If file exists, it's truncated.
 
 To install:
-Copy to your maven ext/ directory and it will always run
+Copy to your maven lib/ext/ directory and it will always run (to find the lib dir, do `mvn -version`)
 Or 
 Add as an extension to your pom of interest:
 ```<build>
