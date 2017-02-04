@@ -167,7 +167,7 @@ public class LifecycleLogger extends AbstractExecutionListener implements Initia
 			ex.mojo = event.getMojoExecution().getGroupId() + ":" + event.getMojoExecution().getArtifactId();
 			ex.phase = event.getMojoExecution().getLifecyclePhase();
 			ex.goal = event.getMojoExecution().getGoal();
-			ex.start = System.currentTimeMillis() / 1000;
+			ex.start = System.currentTimeMillis();
 //			System.out.println(event.getMojoExecution().getArtifactId());
 			if (event.getMojoExecution().getArtifactId().equals("maven-surefire-plugin")) {
 				// Surefire test starting
@@ -254,7 +254,7 @@ public class LifecycleLogger extends AbstractExecutionListener implements Initia
 			inserter.setDaemon(true);
 			inserter.start();
 		}
-		ex.end = System.currentTimeMillis() / 1000;
+		ex.end = System.currentTimeMillis();
 		ex.success = !failed;
 		synchronized (finishedEvents) {
 			finishedEvents.add(ex);
