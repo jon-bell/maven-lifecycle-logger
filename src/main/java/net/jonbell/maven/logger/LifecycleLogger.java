@@ -291,7 +291,7 @@ public class LifecycleLogger extends AbstractExecutionListener implements Initia
 	@Override
 	public void sessionEnded(ExecutionEvent event) {
 		delegate.sessionEnded(event);
-		ex.end = System.currentTimeMillis() / 1000;
+		ex.end = System.currentTimeMillis();
 		synchronized (finishedEvents) {
 			finishedEvents.add(ex);
 			finishedEvents.notify();
@@ -315,7 +315,7 @@ public class LifecycleLogger extends AbstractExecutionListener implements Initia
 	@Override
 	public void sessionStarted(ExecutionEvent event) {
 		delegate.sessionStarted(event);
-		ex.start = System.currentTimeMillis() / 1000;
+		ex.start = System.currentTimeMillis();
 		ex.isSession = true;
 	}
 
